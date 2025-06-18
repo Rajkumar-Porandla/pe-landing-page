@@ -9,7 +9,7 @@ export function About() {
             <div className="relative h-[500px] rounded-lg overflow-hidden premium-shadow">
               <Image
                 src="/store-image.jpg"
-                alt="Parameshwara Enterprises Store"
+                alt="Parameshwara Enterprises electrical store in Warangal, Telangana - Your trusted partner for electrical goods and water solutions"
                 fill
                 className="object-cover"
                 priority
@@ -24,8 +24,8 @@ export function About() {
             <div className="w-20 h-1 bg-gold mb-8"></div>
             <p className="text-lg text-matte-black/80 mb-6">
               Since 2015, Parameshwara Enterprises has been a trusted name in electrical and water infrastructure
-              supplies in the region. We take pride in offering only genuine products from reputed brands, ensuring
-              quality and reliability for all your needs.
+              supplies in Warangal, Telangana. We take pride in offering only genuine products from reputed brands,
+              ensuring quality and reliability for all your needs.
             </p>
             <p className="text-lg text-matte-black/80 mb-8">
               Our experienced team provides expert guidance to help you choose the right products for your requirements,

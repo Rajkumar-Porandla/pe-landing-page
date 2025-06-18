@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import Image from "next/image"
@@ -9,7 +11,7 @@ export function Hero() {
       <div className="absolute inset-0 z-0">
         <Image
           src="/hero-image.png"
-          alt="Modern living room with ceiling fan"
+          alt="Parameshwara Enterprises - Modern electrical solutions and water storage systems in Warangal"
           fill
           className="object-cover"
           priority
@@ -31,6 +33,7 @@ export function Hero() {
             <Button
               size="lg"
               className="bg-gold hover:bg-white text-matte-black hover:text-matte-black text-lg group premium-transition"
+              onClick={() => document.getElementById("products")?.scrollIntoView({ behavior: "smooth" })}
             >
               Explore Our Products
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -38,6 +41,7 @@ export function Hero() {
             <Button
               size="lg"
               className="bg-white text-matte-black hover:bg-gold hover:text-matte-black border border-white hover:border-gold"
+              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
             >
               Contact Us
             </Button>
