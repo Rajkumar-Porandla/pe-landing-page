@@ -103,6 +103,7 @@ export default function RootLayout({
         <meta name="geo.position" content="17.9802654;79.598601" />
         <meta name="ICBM" content="17.9802654, 79.598601" />
 
+        {/* Business Schema - Simplified without problematic Product offers */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -111,8 +112,8 @@ export default function RootLayout({
               "@type": "LocalBusiness",
               name: "Parameshwara Enterprises",
               image: [
-                "https://parameshwaraenterprises.com/store-image.jpg",
-                "https://parameshwaraenterprises.com/hero-image.png",
+                "https://parameshwaraenterprises.vercel.app/store-image.jpg",
+                "https://parameshwaraenterprises.vercel.app/hero-image.png",
               ],
               description:
                 "Your trusted partner for electrical goods, water tanks, pipes and fittings from reputed brands in Warangal, Telangana since 2015.",
@@ -130,7 +131,7 @@ export default function RootLayout({
                 latitude: 17.9802654,
                 longitude: 79.598601,
               },
-              url: "https://parameshwaraenterprises.com",
+              url: "https://parameshwaraenterprises.vercel.app",
               telephone: "+91-76748-78976",
               email: "info@parameshwaraenterprises.com",
               openingHoursSpecification: [
@@ -157,48 +158,38 @@ export default function RootLayout({
                 "https://www.google.com/maps/place/PARAMESHWARA+ENTERPRISES/@17.9802705,79.5960261,17z/data=!4m8!3m7!1s0x3a3345220e9e2523:0x4e53dd5d0f84299a!8m2!3d17.9802654!4d79.598601!9m1!1b1!16s%2Fg%2F11c61dkdjw",
                 "https://wa.me/917674878976",
               ],
-              hasOfferCatalog: {
-                "@type": "OfferCatalog",
-                name: "Electrical & Water Solutions",
-                itemListElement: [
-                  {
-                    "@type": "Offer",
-                    itemOffered: {
-                      "@type": "Product",
-                      name: "Modular Switches & Sockets",
-                      brand: "Anchor by Panasonic",
-                    },
-                  },
-                  {
-                    "@type": "Offer",
-                    itemOffered: {
-                      "@type": "Product",
-                      name: "Water Storage Tanks",
-                      brand: "Sintex",
-                    },
-                  },
-                  {
-                    "@type": "Offer",
-                    itemOffered: {
-                      "@type": "Product",
-                      name: "Electrical Fans & Appliances",
-                      brand: "V-Guard",
-                    },
-                  },
-                  {
-                    "@type": "Offer",
-                    itemOffered: {
-                      "@type": "Product",
-                      name: "Pipes & Fittings",
-                      brand: "Sudhakar Pipes",
-                    },
-                  },
-                ],
+              serviceArea: {
+                "@type": "GeoCircle",
+                geoMidpoint: {
+                  "@type": "GeoCoordinates",
+                  latitude: 17.9802654,
+                  longitude: 79.598601,
+                },
+                geoRadius: "50000",
               },
+              makesOffer: [
+                {
+                  "@type": "Offer",
+                  name: "Electrical Goods & Accessories",
+                  description:
+                    "Wide range of electrical products including switches, sockets, wires, and lighting solutions",
+                },
+                {
+                  "@type": "Offer",
+                  name: "Water Storage Solutions",
+                  description: "Quality water tanks and storage systems from trusted brands",
+                },
+                {
+                  "@type": "Offer",
+                  name: "Pipes & Fittings",
+                  description: "Comprehensive range of pipes and plumbing fittings for all applications",
+                },
+              ],
             }),
           }}
         />
 
+        {/* Organization Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -206,8 +197,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "Parameshwara Enterprises",
-              url: "https://parameshwaraenterprises.com",
-              logo: "https://parameshwaraenterprises.com/logo.png",
+              url: "https://parameshwaraenterprises.vercel.app",
+              logo: "https://parameshwaraenterprises.vercel.app/logo.png",
               contactPoint: {
                 "@type": "ContactPoint",
                 telephone: "+91-76748-78976",
@@ -227,6 +218,24 @@ export default function RootLayout({
               foundingDate: "2015",
               description:
                 "Leading electrical and water solutions provider in Warangal, Telangana, offering genuine products from top brands since 2015.",
+            }),
+          }}
+        />
+
+        {/* Website Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Parameshwara Enterprises",
+              url: "https://parameshwaraenterprises.vercel.app",
+              description: "Electrical and water solutions provider in Warangal, Telangana",
+              publisher: {
+                "@type": "Organization",
+                name: "Parameshwara Enterprises",
+              },
             }),
           }}
         />
