@@ -1,16 +1,32 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Inter, Playfair_Display, Space_Grotesk } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { WhatsAppChat } from "@/components/whatsapp-chat"
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+})
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  display: "swap",
+})
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space",
+  display: "swap",
+})
 
 export const metadata: Metadata = {
-  title: "Parameshwara Enterprises - Electrical & Water Solutions | Warangal, Telangana",
+  title: "Parameshwara Enterprises - Premium Electrical & Water Solutions | Warangal, Telangana",
   description:
-    "Parameshwara Enterprises is your trusted partner for electrical goods, water tanks, pipes and fittings from reputed brands like Anchor by Panasonic, V-Guard, Sintex, Havells, Legrand in Warangal, Telangana since 2015.",
+    "Parameshwara Enterprises is your trusted partner for premium electrical goods, water tanks, pipes and fittings from reputed brands like Anchor by Panasonic, V-Guard, Sintex, Havells, Legrand in Warangal, Telangana since 2015.",
   keywords: [
     "Parameshwara Enterprises",
     "electrical goods Warangal",
@@ -40,22 +56,22 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://parameshwaraenterprises.com"),
+  metadataBase: new URL("https://parameshwaraenterprises.vercel.app"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Parameshwara Enterprises - Electrical & Water Solutions | Warangal",
+    title: "Parameshwara Enterprises - Premium Electrical & Water Solutions | Warangal",
     description:
-      "Your trusted partner for electrical goods, water tanks, pipes and fittings from reputed brands in Warangal, Telangana since 2015.",
-    url: "https://parameshwaraenterprises.com",
+      "Your trusted partner for premium electrical goods, water tanks, pipes and fittings from reputed brands in Warangal, Telangana since 2015.",
+    url: "https://parameshwaraenterprises.vercel.app",
     siteName: "Parameshwara Enterprises",
     images: [
       {
         url: "/hero-image.png",
         width: 1200,
         height: 630,
-        alt: "Parameshwara Enterprises - Electrical & Water Solutions",
+        alt: "Parameshwara Enterprises - Premium Electrical & Water Solutions",
       },
       {
         url: "/store-image.jpg",
@@ -69,9 +85,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Parameshwara Enterprises - Electrical & Water Solutions",
+    title: "Parameshwara Enterprises - Premium Electrical & Water Solutions",
     description:
-      "Your trusted partner for electrical goods, water tanks, pipes and fittings from reputed brands in Warangal, Telangana.",
+      "Your trusted partner for premium electrical goods, water tanks, pipes and fittings from reputed brands in Warangal, Telangana.",
     images: ["/hero-image.png"],
   },
   robots: {
@@ -95,7 +111,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${inter.variable} ${playfair.variable} ${spaceGrotesk.variable}`}
+    >
       <head>
         <meta name="google-site-verification" content="tc_lfHZ3Ko8iGYj0gzf-qtsT3khU6sSgFbL1O1KhHmY" />
         <meta name="geo.region" content="IN-TG" />
@@ -231,7 +251,7 @@ export default function RootLayout({
               "@type": "WebSite",
               name: "Parameshwara Enterprises",
               url: "https://parameshwaraenterprises.vercel.app",
-              description: "Electrical and water solutions provider in Warangal, Telangana",
+              description: "Premium electrical and water solutions provider in Warangal, Telangana",
               publisher: {
                 "@type": "Organization",
                 name: "Parameshwara Enterprises",
@@ -240,7 +260,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.className} font-inter antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           {children}
           <WhatsAppChat />
